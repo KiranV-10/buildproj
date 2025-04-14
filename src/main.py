@@ -2,6 +2,10 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+   return {"message": "Welcome to the Dental Radiograph Annotation API"}
+
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
